@@ -7,23 +7,25 @@ namespace HashTableDemo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Welcome to Hashmap.");
-            /// Create a  reference of MyMapNode
-            MyMapNode<string, string> hash = new MyMapNode<string, string>(5);
+            Console.WriteLine("Welcome to Hashmap.");
 
-            hash.Add("0", "To");
-            hash.Add("1", "be");
-            hash.Add("2", "or");
-            hash.Add("3", "not");
-            hash.Add("4", "to");
-            hash.Add("5", "be");
-            hash.GetFrequency("To");
+            string paragraph = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
 
-            string hashFive = hash.Get("5");
-            Console.WriteLine("5th index value is: " + hashFive);
+            /// Split into array of sub strings.
+            string[] para = paragraph.Split(" ");
 
-            string hashTwo = hash.Get("2");
-            Console.WriteLine("2nd index value is: " + hashTwo);
+            /// Create a reference of MyMapNode
+            MyMapNode<int, string> hash = new MyMapNode<int, string>(para.Length);
+            int key = 0;
+
+            /// iterating a paragraph
+            /// adds key and value in to hash.
+            foreach (string words in para)
+            {
+                hash.Add(key, words);
+                key++;
+            }
+            Console.WriteLine("Frequency are : {0}" , hash.GetFrequency("paranoid"));
         }
     }
 }

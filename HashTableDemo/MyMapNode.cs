@@ -4,9 +4,9 @@ using System.Text;
 
 namespace HashTableDemo
 {
-    public class MyMapNode<K,V>
+    public class MyMapNode<K, V>
     {
-        ///Variable
+        /// Variable
         public readonly int size;
         public readonly LinkedList<keyValue<K, V>>[] items;
 
@@ -38,13 +38,13 @@ namespace HashTableDemo
         /// <returns></returns>
         protected LinkedList<keyValue<K, V>> GetLinkedlist(int position)
         {
-            LinkedList<keyValue<K, V>> linkedList = items[position];
-            if (linkedList == null)
+            LinkedList<keyValue<K, V>> linkedLlist = items[position];
+            if (linkedLlist == null)
             {
-                linkedList = new LinkedList<keyValue<K, V>>();
-                items[position] = linkedList;
+                linkedLlist = new LinkedList<keyValue<K, V>>();
+                items[position] = linkedLlist;
             }
-            return linkedList;
+            return linkedLlist;
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace HashTableDemo
         }
 
         /// <summary>
-        /// Removes the value provided by key.
+        /// Removes the specified key.
         /// </summary>
         /// <param name="key">The key.</param>
         public void Remove(K key)
@@ -118,18 +118,21 @@ namespace HashTableDemo
         }
 
         /// <summary>
-        ///Gives the frequency the of word appear.
+        /// Gets the frequency.
         /// </summary>
-        public void GetFrequency(V value)
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        public int GetFrequency(V value)
         {
             int count = 0;
-            ///Iterating to get the key value of each item.
+
+            /// To get the key value of each item
             foreach (LinkedList<keyValue<K, V>> list in items)
             {
-                ///Checking if key is not null 
                 if (list == null)
                     continue;
-                ///Iterating to get the value of the item in linked list.
+
+                /// To get the value of the item 
                 foreach (keyValue<K, V> obj in list)
                 {
                     if (obj.Equals(null))
@@ -138,7 +141,7 @@ namespace HashTableDemo
                         count++;
                 }
             }
-            Console.WriteLine("Frequency of {0} is {1}", value, count);
+            return count;
         }
     }
 }
