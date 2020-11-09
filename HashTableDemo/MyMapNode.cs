@@ -118,7 +118,7 @@ namespace HashTableDemo
         }
 
         /// <summary>
-        ///Gives the count the of word provided.
+        ///Gives the frequency the of word appear.
         /// </summary>
         public void GetFrequency(V value)
         {
