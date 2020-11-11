@@ -26,6 +26,9 @@ namespace HashTableDemo
                 key++;
             }
             Console.WriteLine("Frequency are : {0}" , hash.GetFrequency("paranoid"));
+
+            MyMapNode<int, string>.RemoveWord(hash, "avoidable");
+            
         }
     }
 }

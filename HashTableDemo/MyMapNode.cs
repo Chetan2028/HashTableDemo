@@ -144,6 +144,21 @@ namespace HashTableDemo
             return count;
         }
 
-
+        /// <summary>
+        /// Removes the word.
+        /// </summary>
+        /// <param name="hashMap">The hash map.</param>
+        /// <param name="word">The word.</param>
+        public static void RemoveWord(MyMapNode<int,string> hashMap,string word)
+        {
+            for (int key = 0; key < hashMap.size; key++)
+            {
+                if (hashMap.Get(key).Equals(word))
+                {
+                    hashMap.Remove(key);
+                    Console.WriteLine("{0} removed from paragraph",word);
+                }
+            }
+        }
     }
 }
