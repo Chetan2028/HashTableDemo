@@ -92,7 +92,7 @@ namespace HashTableDemo
         }
 
         /// <summary>
-        /// Removes the specified key.
+        /// Removes the data related to specified key.
         /// </summary>
         /// <param name="key">The key.</param>
         public void Remove(K key)
@@ -143,5 +143,7 @@ namespace HashTableDemo
             }
             return count;
         }
+
+
     }
 }
